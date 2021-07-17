@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19115.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zmn-Fb-VoV">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CodeTestWeather-->
+        <scene sceneID="QNZ-eS-zj9">
+            <objects>
+                <viewController id="x8J-ov-BzI" customClass="SearchViewController" customModule="CodeTestWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ute-Fk-BK2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" id="KBF-EE-7ZH">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RT7-hw-4SR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="764"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SearchCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" id="Kh4-Gs-Jin" userLabel="SearchCell" customClass="SearchCell" customModule="SearchCell">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="43"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kh4-Gs-Jin" id="ZYq-rT-jHm">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7d-kv-rLr">
+                                                    <rect key="frame" x="20" y="11" width="31" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="s7d-kv-rLr" firstAttribute="centerY" secondItem="ZYq-rT-jHm" secondAttribute="centerY" id="94X-4v-xAN"/>
+                                                <constraint firstItem="s7d-kv-rLr" firstAttribute="top" secondItem="ZYq-rT-jHm" secondAttribute="topMargin" id="9z3-7r-5Ub"/>
+                                                <constraint firstItem="s7d-kv-rLr" firstAttribute="leading" secondItem="ZYq-rT-jHm" secondAttribute="leadingMargin" id="wIh-BF-vaR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="s7d-kv-rLr" id="INA-3K-B2C"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0zg-Vh-dTk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RT7-hw-4SR" firstAttribute="top" secondItem="KBF-EE-7ZH" secondAttribute="bottom" symbolic="YES" id="4sJ-R2-jvx"/>
+                            <constraint firstItem="RT7-hw-4SR" firstAttribute="leading" secondItem="0zg-Vh-dTk" secondAttribute="leading" id="coD-oO-h7B"/>
+                            <constraint firstItem="RT7-hw-4SR" firstAttribute="trailing" secondItem="0zg-Vh-dTk" secondAttribute="trailing" id="eFy-XU-tEY"/>
+                            <constraint firstAttribute="bottom" secondItem="RT7-hw-4SR" secondAttribute="bottom" id="ona-f0-Bll"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="CodeTestWeather" id="nIk-bE-Rta"/>
+                    <connections>
+                        <outlet property="searchBar" destination="KBF-EE-7ZH" id="Bma-3c-CyH"/>
+                        <outlet property="tableView" destination="RT7-hw-4SR" id="cEz-wZ-xpi"/>
+                        <segue destination="t3x-xW-zCH" kind="show" identifier="detailsviewcontrollerseg" id="t9g-oT-goe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0qg-3o-37q" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="987" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XSg-uR-ez7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zmn-Fb-VoV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="fb7-s2-QQw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.73725490199999999" green="0.1333333333" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="x8J-ov-BzI" kind="relationship" relationship="rootViewController" id="I32-2M-28x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s52-a0-RsZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="KPj-QV-s4b">
+            <objects>
+                <viewController id="t3x-xW-zCH" customClass="DetailViewController" customModule="CodeTestWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b5O-AR-SFZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8N-aE-VkP">
+                                <rect key="frame" x="20" y="374" width="374" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5XG-b1-GKc"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="V8N-aE-VkP" firstAttribute="centerX" secondItem="5XG-b1-GKc" secondAttribute="centerX" id="Dcj-NZ-qZF"/>
+                            <constraint firstItem="V8N-aE-VkP" firstAttribute="centerY" secondItem="5XG-b1-GKc" secondAttribute="centerY" id="H0T-bo-3hp"/>
+                            <constraint firstItem="5XG-b1-GKc" firstAttribute="trailing" secondItem="V8N-aE-VkP" secondAttribute="trailing" constant="20" id="aep-R5-M7C"/>
+                            <constraint firstItem="V8N-aE-VkP" firstAttribute="leading" secondItem="5XG-b1-GKc" secondAttribute="leading" constant="20" id="xWk-at-eMS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZtI-yo-iSd"/>
+                    <connections>
+                        <outlet property="selectedCountryLabel" destination="V8N-aE-VkP" id="8pI-ag-vTH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6eG-cY-wqg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1891" y="139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
