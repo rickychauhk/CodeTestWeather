@@ -9,12 +9,26 @@
 /* Begin PBXBuildFile section */
 		9CB77FDC26A2905A00B1A602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB77FDB26A2905A00B1A602 /* AppDelegate.swift */; };
 		9CB77FDE26A2905A00B1A602 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB77FDD26A2905A00B1A602 /* SceneDelegate.swift */; };
-		9CB77FE026A2905A00B1A602 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB77FDF26A2905A00B1A602 /* ViewController.swift */; };
 		9CB77FE326A2905A00B1A602 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB77FE126A2905A00B1A602 /* Main.storyboard */; };
 		9CB77FE526A2905B00B1A602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CB77FE426A2905B00B1A602 /* Assets.xcassets */; };
 		9CB77FE826A2905B00B1A602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB77FE626A2905B00B1A602 /* LaunchScreen.storyboard */; };
 		9CB77FF326A2905B00B1A602 /* CodeTestWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB77FF226A2905B00B1A602 /* CodeTestWeatherTests.swift */; };
 		9CB77FFD26A2905B00B1A602 /* CodeTestWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB77FFC26A2905B00B1A602 /* CodeTestWeatherUITests.swift */; };
+		9CB7800B26A2917300B1A602 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7800A26A2917300B1A602 /* SearchViewController.swift */; };
+		9CB7800C26A2917300B1A602 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7800A26A2917300B1A602 /* SearchViewController.swift */; };
+		9CB7800D26A2917300B1A602 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7800A26A2917300B1A602 /* SearchViewController.swift */; };
+		9CB7801026A2955400B1A602 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7800F26A2955400B1A602 /* SearchViewModel.swift */; };
+		9CB7801126A2955400B1A602 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7800F26A2955400B1A602 /* SearchViewModel.swift */; };
+		9CB7801226A2955400B1A602 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7800F26A2955400B1A602 /* SearchViewModel.swift */; };
+		9CB7801626A296C400B1A602 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801526A296C400B1A602 /* Constants.swift */; };
+		9CB7801726A296C400B1A602 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801526A296C400B1A602 /* Constants.swift */; };
+		9CB7801826A296C400B1A602 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801526A296C400B1A602 /* Constants.swift */; };
+		9CB7801A26A2A1A400B1A602 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801926A2A1A400B1A602 /* SearchCell.swift */; };
+		9CB7801B26A2A1A400B1A602 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801926A2A1A400B1A602 /* SearchCell.swift */; };
+		9CB7801C26A2A1A400B1A602 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801926A2A1A400B1A602 /* SearchCell.swift */; };
+		9CB7801F26A2B99700B1A602 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801E26A2B99700B1A602 /* DetailViewController.swift */; };
+		9CB7802026A2B99700B1A602 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801E26A2B99700B1A602 /* DetailViewController.swift */; };
+		9CB7802126A2B99700B1A602 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801E26A2B99700B1A602 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +52,6 @@
 		9CB77FD826A2905A00B1A602 /* CodeTestWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeTestWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB77FDB26A2905A00B1A602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CB77FDD26A2905A00B1A602 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9CB77FDF26A2905A00B1A602 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9CB77FE226A2905A00B1A602 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CB77FE426A2905B00B1A602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CB77FE726A2905B00B1A602 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +60,11 @@
 		9CB77FF226A2905B00B1A602 /* CodeTestWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTestWeatherTests.swift; sourceTree = "<group>"; };
 		9CB77FF826A2905B00B1A602 /* CodeTestWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeTestWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB77FFC26A2905B00B1A602 /* CodeTestWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTestWeatherUITests.swift; sourceTree = "<group>"; };
+		9CB7800A26A2917300B1A602 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		9CB7800F26A2955400B1A602 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		9CB7801526A296C400B1A602 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9CB7801926A2A1A400B1A602 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		9CB7801E26A2B99700B1A602 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +115,14 @@
 		9CB77FDA26A2905A00B1A602 /* CodeTestWeather */ = {
 			isa = PBXGroup;
 			children = (
+				9CB7801D26A2A58C00B1A602 /* Models */,
+				9CB7801426A296B600B1A602 /* Helpers */,
+				9CB7801326A2957800B1A602 /* View */,
+				9CB7800E26A2954100B1A602 /* ViewModel */,
+				9CB7800926A2914A00B1A602 /* Controller */,
 				9CB77FDB26A2905A00B1A602 /* AppDelegate.swift */,
 				9CB77FDD26A2905A00B1A602 /* SceneDelegate.swift */,
-				9CB77FDF26A2905A00B1A602 /* ViewController.swift */,
-				9CB77FE126A2905A00B1A602 /* Main.storyboard */,
 				9CB77FE426A2905B00B1A602 /* Assets.xcassets */,
-				9CB77FE626A2905B00B1A602 /* LaunchScreen.storyboard */,
 				9CB77FE926A2905B00B1A602 /* Info.plist */,
 			);
 			path = CodeTestWeather;
@@ -122,6 +142,48 @@
 				9CB77FFC26A2905B00B1A602 /* CodeTestWeatherUITests.swift */,
 			);
 			path = CodeTestWeatherUITests;
+			sourceTree = "<group>";
+		};
+		9CB7800926A2914A00B1A602 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9CB7800A26A2917300B1A602 /* SearchViewController.swift */,
+				9CB7801E26A2B99700B1A602 /* DetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9CB7800E26A2954100B1A602 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9CB7800F26A2955400B1A602 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9CB7801326A2957800B1A602 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CB77FE126A2905A00B1A602 /* Main.storyboard */,
+				9CB77FE626A2905B00B1A602 /* LaunchScreen.storyboard */,
+				9CB7801926A2A1A400B1A602 /* SearchCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9CB7801426A296B600B1A602 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9CB7801526A296C400B1A602 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9CB7801D26A2A58C00B1A602 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,8 +317,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CB77FE026A2905A00B1A602 /* ViewController.swift in Sources */,
+				9CB7801F26A2B99700B1A602 /* DetailViewController.swift in Sources */,
+				9CB7801626A296C400B1A602 /* Constants.swift in Sources */,
+				9CB7801A26A2A1A400B1A602 /* SearchCell.swift in Sources */,
+				9CB7801026A2955400B1A602 /* SearchViewModel.swift in Sources */,
 				9CB77FDC26A2905A00B1A602 /* AppDelegate.swift in Sources */,
+				9CB7800B26A2917300B1A602 /* SearchViewController.swift in Sources */,
 				9CB77FDE26A2905A00B1A602 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,7 +331,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CB7801126A2955400B1A602 /* SearchViewModel.swift in Sources */,
+				9CB7801B26A2A1A400B1A602 /* SearchCell.swift in Sources */,
+				9CB7802026A2B99700B1A602 /* DetailViewController.swift in Sources */,
+				9CB7800C26A2917300B1A602 /* SearchViewController.swift in Sources */,
 				9CB77FF326A2905B00B1A602 /* CodeTestWeatherTests.swift in Sources */,
+				9CB7801726A296C400B1A602 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +344,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CB7801226A2955400B1A602 /* SearchViewModel.swift in Sources */,
+				9CB7801C26A2A1A400B1A602 /* SearchCell.swift in Sources */,
+				9CB7802126A2B99700B1A602 /* DetailViewController.swift in Sources */,
+				9CB7800D26A2917300B1A602 /* SearchViewController.swift in Sources */,
 				9CB77FFD26A2905B00B1A602 /* CodeTestWeatherUITests.swift in Sources */,
+				9CB7801826A296C400B1A602 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
