@@ -71,4 +71,10 @@ class SearchViewModel {
         let userDefaults = UserDefaults.standard
         userDefaults.set(cityList, forKey: Constants.storeKey)
     }
+    
+    func textEncode(text: String) -> String{
+        let searchText = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        return searchText!
+    }
+    
 }

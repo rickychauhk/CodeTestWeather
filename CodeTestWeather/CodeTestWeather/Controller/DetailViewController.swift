@@ -10,11 +10,8 @@ import UIKit
 import Nuke
 
 class DetailViewController: UIViewController{
-    
-    @IBOutlet weak var selectedCountryLabel: UILabel? // temp test for pused data
-    
+
     let weatherViewModel: WeatherViewModel = WeatherViewModel()
-    let weather: WeatherView = WeatherView()
     var selectedCountry: String? = ""
     var lat: String? = ""
     var lon: String? = ""
@@ -26,7 +23,6 @@ class DetailViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectedCountryLabel?.text = selectedCountry
 
         setupCollectionView()
         getDataFromAPI()

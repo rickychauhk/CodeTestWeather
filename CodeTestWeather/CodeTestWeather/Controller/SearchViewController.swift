@@ -37,7 +37,11 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
         
         self.searchBar = searchViewModel.setupSearchbar(searchBar: self.searchBar)
         
-        self.listOfCountries()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        self.listOfCities()
     }
     
     @IBAction func getUserLLocation() {
@@ -69,7 +73,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func listOfCountries() {
+    func listOfCities() {
         
         let userDefaults = UserDefaults.standard
         cityList = (userDefaults.object(forKey: Constants.storeKey) as? [String] ?? [])
@@ -122,14 +126,16 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var selectedCountry: String = ""
         if searching {
-            let selectedCountry = searchedCity[indexPath.row]
-            selected = selectedCountry
+            selectedCountry = searchedCity[indexPath.row]
+            selectedCountry = searchViewModel.textEncode(text: selectedCountry)
+          
         } else {
-            let selectedCountry = cityList[indexPath.row]
-            selected = selectedCountry
+             selectedCountry = cityList[indexPath.row]
+            selectedCountry = searchViewModel.textEncode(text: selectedCountry)
         }
-        
+        selected = selectedCountry
         performSegue(withIdentifier: "detailsviewcontrollerseg", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
         self.searchBar.searchTextField.endEditing(true)
@@ -147,20 +153,38 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searching = false
         searchBar.text = ""
-//        let decodedString = "Japan".removingPercentEncoding!
-//        cityList.append(decodedString)
-//        searchViewModel.updateCityList(cityList: cityList)
+        resetData()
         tableView.reloadData()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let city = searchBar.text {
-            selected = city
+            insetCity(searchText: searchViewModel.textEncode(text: searchBar.text!))
+            selected = searchViewModel.textEncode(text: city)
             performSegue(withIdentifier: "detailsviewcontrollerseg", sender: self)
+            resetData()
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         debugPrint(error.localizedDescription)
+    }
+    
+    func insetCity(searchText: String){
+
+        var isExists = false
+        for cityListItem in cityList {
+            let decodedString = searchText.removingPercentEncoding!
+            if cityListItem == decodedString{
+                isExists = true
+                return
+            }
+        }
+        
+        if !isExists || cityList.count == 0 {
+            let decodedString = searchText.removingPercentEncoding!
+            cityList.append(decodedString)
+            searchViewModel.updateCityList(cityList: cityList)
+        }
     }
 }
