@@ -7,15 +7,37 @@
 
 import Foundation
 import UIKit
+import Nuke
 
 class DetailViewController: UIViewController{
-    
-    @IBOutlet weak var selectedCountryLabel: UILabel? // temp test for pused data
-    
+
+    let weatherViewModel: WeatherViewModel = WeatherViewModel()
     var selectedCountry: String? = ""
+    var lat: String? = ""
+    var lon: String? = ""
+    @IBOutlet var collectionView: UICollectionView!
+    let searchController: DetailViewModel = DetailViewModel()
+    let weatherCellHeight: CGFloat = 160.0
+    @IBOutlet var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectedCountryLabel?.text = selectedCountry
+
+        setupCollectionView()
+    }
+    
+    //MARK: Fetch Data
+    func getDataFromAPI(){
+        
+        weatherViewModel.weather.removeAll()
+        weatherViewModel.getWeatherData(city: self.selectedCountry ?? "", lat: self.lat ?? "", lon: self.lon ?? "")
+    }
+    
+    func setupCollectionView(){
+        collectionView = searchController.setupCollectionView(collectionView: collectionView)
+        getDataFromAPI()
+        weatherViewModel.dataLoadSuccessfully = { [weak self] in
+            self!.collectionView.reloadData()
+        }
     }
 }

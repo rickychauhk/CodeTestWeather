@@ -7,19 +7,24 @@
 
 import Foundation
 import UIKit
+import MapKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var searchBar: UISearchBar!
-    
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var gpsBarBtn: UIBarButtonItem!
     
-    var searchViewModel: SearchViewModel = SearchViewModel()
+    let searchViewModel: SearchViewModel = SearchViewModel()
+    let weatherViewModel: WeatherViewModel = WeatherViewModel()
     var cityList = [String]()
-    
     var searchedCity = [String]()
     var searching = false
-    
     var selected: String?
+    
+    var locationManger: CLLocationManager!
+    var currentlocation: CLLocation?
+    var lat: String = ""
+    var lon: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +36,45 @@ class SearchViewController: UIViewController {
         
         self.searchBar = searchViewModel.setupSearchbar(searchBar: self.searchBar)
         
-        self.listOfCountries()
     }
     
-    func listOfCountries() {
-      
-            let userDefaults = UserDefaults.standard
-
-            cityList = (userDefaults.object(forKey: Constants.storeKey) as? [String] ?? [])
-//            dataFiltered = data
-            tableView.reloadData()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        self.listOfCities()
+    }
+    
+    @IBAction func getUserLLocation() {
+        if (CLLocationManager.locationServicesEnabled()) {
+            locationManger = CLLocationManager()
+            locationManger.delegate = self
+            locationManger.desiredAccuracy = kCLLocationAccuracyBest
+            locationManger.requestWhenInUseAuthorization()
+            locationManger.requestLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            self.currentlocation = location
+            
+            let latitude: Double = self.currentlocation!.coordinate.latitude
+            let longitude: Double = self.currentlocation!.coordinate.longitude
+            
+            self.lon = String(longitude)
+            self.lat = String(latitude)
+            
+            if !Constants.isNilOrEmpty(string: self.lon) && !Constants.isNilOrEmpty(string: self.lat){
+                performSegue(withIdentifier: "detailsviewcontrollerseg", sender: self)
+                resetData()
+            }
+        }
+    }
+    
+    func listOfCities() {
+        
+        let userDefaults = UserDefaults.standard
+        cityList = (userDefaults.object(forKey: Constants.storeKey) as? [String] ?? [])
+        tableView.reloadData()
         
     }
     
@@ -48,7 +82,17 @@ class SearchViewController: UIViewController {
         if segue.identifier == "detailsviewcontrollerseg" {
             let detailViewController = segue.destination as? DetailViewController
             detailViewController?.selectedCountry = selected
+            detailViewController?.lat = self.lat
+            detailViewController?.lon = self.lon
         }
+    }
+    
+    func resetData() {
+        self.searchBar.searchTextField.endEditing(true)
+        self.lon = ""
+        self.lat = ""
+        self.selected = ""
+        self.searching = false
     }
 }
 
@@ -79,17 +123,18 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var selectedCountry: String = ""
         if searching {
-            let selectedCountry = searchedCity[indexPath.row]
-            selected = selectedCountry
+            selectedCountry = searchedCity[indexPath.row]
+            selectedCountry = searchViewModel.textEncode(text: selectedCountry)
+          
         } else {
-            let selectedCountry = cityList[indexPath.row]
-            selected = selectedCountry
+             selectedCountry = cityList[indexPath.row]
+            selectedCountry = searchViewModel.textEncode(text: selectedCountry)
         }
+        selected = selectedCountry
         performSegue(withIdentifier: "detailsviewcontrollerseg", sender: self)
-        // Remove highlight from the selected cell
         tableView.deselectRow(at: indexPath, animated: true)
-        // Close keyboard when you select cell
         self.searchBar.searchTextField.endEditing(true)
     }
 }
@@ -105,17 +150,20 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searching = false
         searchBar.text = ""
-//        let decodedString = "Japan".removingPercentEncoding!
-//        cityList.append(decodedString)
-//        searchViewModel.updateCityList(cityList: cityList)
+        resetData()
         tableView.reloadData()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let city = searchBar.text {
-            let detailViewController = DetailViewController()
+            searchViewModel.insetCity(searchText: city, cityList: cityList)
+            selected = searchViewModel.textEncode(text: city)
             performSegue(withIdentifier: "detailsviewcontrollerseg", sender: self)
-            detailViewController.selectedCountry = city
+            resetData()
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        debugPrint(error.localizedDescription)
     }
 }
