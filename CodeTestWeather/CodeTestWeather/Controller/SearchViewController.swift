@@ -159,7 +159,7 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let city = searchBar.text {
-            insetCity(searchText: searchViewModel.textEncode(text: searchBar.text!))
+            searchViewModel.insetCity(searchText: city, cityList: cityList)
             selected = searchViewModel.textEncode(text: city)
             performSegue(withIdentifier: "detailsviewcontrollerseg", sender: self)
             resetData()
@@ -168,23 +168,5 @@ extension SearchViewController: UISearchBarDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         debugPrint(error.localizedDescription)
-    }
-    
-    func insetCity(searchText: String){
-
-        var isExists = false
-        for cityListItem in cityList {
-            let decodedString = searchText.removingPercentEncoding!
-            if cityListItem == decodedString{
-                isExists = true
-                return
-            }
-        }
-        
-        if !isExists || cityList.count == 0 {
-            let decodedString = searchText.removingPercentEncoding!
-            cityList.append(decodedString)
-            searchViewModel.updateCityList(cityList: cityList)
-        }
     }
 }

@@ -17,12 +17,5 @@ class DetailViewModel: NSObject, UICollectionViewDelegate{
         collectionView.alwaysBounceVertical = true
         return collectionView
     }
-    
-   
-    
-    func textEncode(text: String) -> String{
-        let searchText = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        return searchText!
-    }
 }
 
