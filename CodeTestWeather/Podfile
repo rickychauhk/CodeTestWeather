@@ -6,7 +6,12 @@ target 'CodeTestWeather' do
   use_frameworks!
 
   # Pods for CodeTestWeather
-
+  pod 'Alamofire', '4.9.1'
+  pod 'RealmSwift'
+  pod 'Nuke'
+  pod 'DropDown'
+  # UI
+  pod 'MBProgressHUD', '0.9.2'
   target 'CodeTestWeatherTests' do
     inherit! :search_paths
     # Pods for testing
