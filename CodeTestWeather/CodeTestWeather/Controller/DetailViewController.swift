@@ -15,7 +15,6 @@ class DetailViewController: UIViewController{
     var selectedCountry: String? = ""
     var lat: String? = ""
     var lon: String? = ""
-    let searchWeatherModel: SearchWeatherModel = SearchWeatherModel()
     @IBOutlet var collectionView: UICollectionView!
     let searchController: DetailViewModel = DetailViewModel()
     let weatherCellHeight: CGFloat = 160.0
@@ -25,10 +24,6 @@ class DetailViewController: UIViewController{
         super.viewDidLoad()
 
         setupCollectionView()
-        getDataFromAPI()
-        weatherViewModel.dataLoadSuccessfully = { [weak self] in
-            self!.collectionView.reloadData()
-        }
     }
     
     //MARK: Fetch Data
@@ -40,5 +35,9 @@ class DetailViewController: UIViewController{
     
     func setupCollectionView(){
         collectionView = searchController.setupCollectionView(collectionView: collectionView)
+        getDataFromAPI()
+        weatherViewModel.dataLoadSuccessfully = { [weak self] in
+            self!.collectionView.reloadData()
+        }
     }
 }

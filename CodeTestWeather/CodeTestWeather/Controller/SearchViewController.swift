@@ -16,7 +16,6 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
     
     let searchViewModel: SearchViewModel = SearchViewModel()
     let weatherViewModel: WeatherViewModel = WeatherViewModel()
-    let searchWeatherModel: SearchWeatherModel = SearchWeatherModel()
     var cityList = [String]()
     var searchedCity = [String]()
     var searching = false
@@ -63,8 +62,6 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
             
             self.lon = String(longitude)
             self.lat = String(latitude)
-            searchWeatherModel.lat = String(latitude)
-            searchWeatherModel.lon = String(longitude)
             
             if !Constants.isNilOrEmpty(string: self.lon) && !Constants.isNilOrEmpty(string: self.lat){
                 performSegue(withIdentifier: "detailsviewcontrollerseg", sender: self)

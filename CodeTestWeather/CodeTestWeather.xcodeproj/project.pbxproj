@@ -51,9 +51,6 @@
 		9CF081AA26A2ECDD00C63948 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF081A926A2ECDD00C63948 /* WeatherViewModel.swift */; };
 		9CF081AB26A2ECDD00C63948 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF081A926A2ECDD00C63948 /* WeatherViewModel.swift */; };
 		9CF081AC26A2ECDD00C63948 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF081A926A2ECDD00C63948 /* WeatherViewModel.swift */; };
-		9CF081AE26A2EF7D00C63948 /* SearchWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF081AD26A2EF7D00C63948 /* SearchWeatherModel.swift */; };
-		9CF081AF26A2EF7D00C63948 /* SearchWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF081AD26A2EF7D00C63948 /* SearchWeatherModel.swift */; };
-		9CF081B026A2EF7D00C63948 /* SearchWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF081AD26A2EF7D00C63948 /* SearchWeatherModel.swift */; };
 		9CF081B626A3000A00C63948 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF081B526A3000A00C63948 /* DetailViewModel.swift */; };
 		9CF081B726A3000A00C63948 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF081B526A3000A00C63948 /* DetailViewModel.swift */; };
 		9CF081B826A3000A00C63948 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF081B526A3000A00C63948 /* DetailViewModel.swift */; };
@@ -115,7 +112,6 @@
 		9CF0819F26A2E64E00C63948 /* WeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRequest.swift; sourceTree = "<group>"; };
 		9CF081A426A2E6B500C63948 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		9CF081A926A2ECDD00C63948 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
-		9CF081AD26A2EF7D00C63948 /* SearchWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWeatherModel.swift; sourceTree = "<group>"; };
 		9CF081B526A3000A00C63948 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		9CF081B926A3003F00C63948 /* WeatherCollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewExtension.swift; sourceTree = "<group>"; };
 		9CF081BD26A3012200C63948 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
@@ -284,7 +280,6 @@
 			isa = PBXGroup;
 			children = (
 				9CF081A426A2E6B500C63948 /* Weather.swift */,
-				9CF081AD26A2EF7D00C63948 /* SearchWeatherModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -542,7 +537,6 @@
 				9CB77FDC26A2905A00B1A602 /* AppDelegate.swift in Sources */,
 				9CF081A526A2E6B500C63948 /* Weather.swift in Sources */,
 				9CF0818B26A2E5C200C63948 /* Enums.swift in Sources */,
-				9CF081AE26A2EF7D00C63948 /* SearchWeatherModel.swift in Sources */,
 				9CB7800B26A2917300B1A602 /* SearchViewController.swift in Sources */,
 				9CB77FDE26A2905A00B1A602 /* SceneDelegate.swift in Sources */,
 				9CF0819326A2E5EB00C63948 /* Loader.swift in Sources */,
@@ -567,7 +561,6 @@
 				9CB7801726A296C400B1A602 /* Constants.swift in Sources */,
 				9CF0819426A2E5EB00C63948 /* Loader.swift in Sources */,
 				9CF081BB26A3003F00C63948 /* WeatherCollectionViewExtension.swift in Sources */,
-				9CF081AF26A2EF7D00C63948 /* SearchWeatherModel.swift in Sources */,
 				9CF0819026A2E5D900C63948 /* Extensions.swift in Sources */,
 				9CF081B726A3000A00C63948 /* DetailViewModel.swift in Sources */,
 			);
@@ -591,7 +584,6 @@
 				9CB7801826A296C400B1A602 /* Constants.swift in Sources */,
 				9CF0819526A2E5EB00C63948 /* Loader.swift in Sources */,
 				9CF081BC26A3003F00C63948 /* WeatherCollectionViewExtension.swift in Sources */,
-				9CF081B026A2EF7D00C63948 /* SearchWeatherModel.swift in Sources */,
 				9CF0819126A2E5D900C63948 /* Extensions.swift in Sources */,
 				9CF081B826A3000A00C63948 /* DetailViewModel.swift in Sources */,
 			);
