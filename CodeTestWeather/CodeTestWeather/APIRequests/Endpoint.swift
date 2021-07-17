@@ -22,7 +22,7 @@ protocol EndPointType {
 extension EndPointType {
     
     var baseURL: String {
-        return "https://api.openweathermap.org/"
+        return Constants.baseUrl
     }
     
     var headers: HTTPHeaders? {

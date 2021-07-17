@@ -43,11 +43,7 @@ class CodeTestWeatherTests: XCTestCase {
         }
         
         let resource = try! JSONDecoder().decode(Weather.self, from: data)
-        
-//        guard let firResource = resource else {
-//            fatalError("First Resource is nil")
-//        }
-        
+
         viewModel = Weather(value: resource)
         
         XCTAssertEqual(viewModel.name, "HongKong")

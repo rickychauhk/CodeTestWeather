@@ -18,5 +18,15 @@ class Constants {
     }
     
     static let storeKey = "storedCities"
+    
+    static let baseUrl = "https://api.openweathermap.org/"
+    
+    static let basePath = "data/2.5/weather?"
+    
+    static let temperatureTitle = "Temperature:"
+    
+    static let humidity = "Humidity:"
+    
+    static let detailViewId = "detailsviewcontrollerseg"
 }
 

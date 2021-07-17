@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.5"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -43,6 +44,7 @@
                                             <constraints>
                                                 <constraint firstItem="s7d-kv-rLr" firstAttribute="centerY" secondItem="ZYq-rT-jHm" secondAttribute="centerY" id="94X-4v-xAN"/>
                                                 <constraint firstItem="s7d-kv-rLr" firstAttribute="top" secondItem="ZYq-rT-jHm" secondAttribute="topMargin" id="9z3-7r-5Ub"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="s7d-kv-rLr" secondAttribute="trailing" constant="20" symbolic="YES" id="rys-yv-Bus"/>
                                                 <constraint firstItem="s7d-kv-rLr" firstAttribute="leading" secondItem="ZYq-rT-jHm" secondAttribute="leadingMargin" id="wIh-BF-vaR"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -63,7 +65,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="CodeTestWeather" id="nIk-bE-Rta">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="PxM-gr-9eg">
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="PxM-gr-9eg">
+                            <imageReference key="image" image="mappin.square.fill" catalog="system"/>
                             <connections>
                                 <action selector="getUserLLocation" destination="x8J-ov-BzI" id="P7X-RD-bHb"/>
                             </connections>
@@ -78,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0qg-3o-37q" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="987" y="139"/>
+            <point key="canvasLocation" x="986.95652173913049" y="138.61607142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XSg-uR-ez7">
@@ -125,7 +128,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeatherCell" id="R9i-DG-gAF" customClass="WeatherCell" customModule="Weather" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeatherCell" id="R9i-DG-gAF" customClass="WeatherCell" customModule="CodeTestWeather" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="161"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MRA-Dd-Hp3">
@@ -219,6 +222,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mappin.square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
