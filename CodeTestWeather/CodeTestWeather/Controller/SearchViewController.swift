@@ -110,4 +110,12 @@ extension SearchViewController: UISearchBarDelegate {
 //        searchViewModel.updateCityList(cityList: cityList)
         tableView.reloadData()
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let city = searchBar.text {
+            let detailViewController = DetailViewController()
+            performSegue(withIdentifier: "detailsviewcontrollerseg", sender: self)
+            detailViewController.selectedCountry = city
+        }
+    }
 }

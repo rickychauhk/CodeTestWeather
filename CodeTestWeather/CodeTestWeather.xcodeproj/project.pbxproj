@@ -23,9 +23,6 @@
 		9CB7801626A296C400B1A602 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801526A296C400B1A602 /* Constants.swift */; };
 		9CB7801726A296C400B1A602 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801526A296C400B1A602 /* Constants.swift */; };
 		9CB7801826A296C400B1A602 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801526A296C400B1A602 /* Constants.swift */; };
-		9CB7801A26A2A1A400B1A602 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801926A2A1A400B1A602 /* SearchCell.swift */; };
-		9CB7801B26A2A1A400B1A602 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801926A2A1A400B1A602 /* SearchCell.swift */; };
-		9CB7801C26A2A1A400B1A602 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801926A2A1A400B1A602 /* SearchCell.swift */; };
 		9CB7801F26A2B99700B1A602 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801E26A2B99700B1A602 /* DetailViewController.swift */; };
 		9CB7802026A2B99700B1A602 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801E26A2B99700B1A602 /* DetailViewController.swift */; };
 		9CB7802126A2B99700B1A602 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801E26A2B99700B1A602 /* DetailViewController.swift */; };
@@ -63,7 +60,6 @@
 		9CB7800A26A2917300B1A602 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9CB7800F26A2955400B1A602 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		9CB7801526A296C400B1A602 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		9CB7801926A2A1A400B1A602 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		9CB7801E26A2B99700B1A602 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,7 +162,6 @@
 			children = (
 				9CB77FE126A2905A00B1A602 /* Main.storyboard */,
 				9CB77FE626A2905B00B1A602 /* LaunchScreen.storyboard */,
-				9CB7801926A2A1A400B1A602 /* SearchCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,7 +314,6 @@
 			files = (
 				9CB7801F26A2B99700B1A602 /* DetailViewController.swift in Sources */,
 				9CB7801626A296C400B1A602 /* Constants.swift in Sources */,
-				9CB7801A26A2A1A400B1A602 /* SearchCell.swift in Sources */,
 				9CB7801026A2955400B1A602 /* SearchViewModel.swift in Sources */,
 				9CB77FDC26A2905A00B1A602 /* AppDelegate.swift in Sources */,
 				9CB7800B26A2917300B1A602 /* SearchViewController.swift in Sources */,
@@ -332,7 +326,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CB7801126A2955400B1A602 /* SearchViewModel.swift in Sources */,
-				9CB7801B26A2A1A400B1A602 /* SearchCell.swift in Sources */,
 				9CB7802026A2B99700B1A602 /* DetailViewController.swift in Sources */,
 				9CB7800C26A2917300B1A602 /* SearchViewController.swift in Sources */,
 				9CB77FF326A2905B00B1A602 /* CodeTestWeatherTests.swift in Sources */,
@@ -345,7 +338,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CB7801226A2955400B1A602 /* SearchViewModel.swift in Sources */,
-				9CB7801C26A2A1A400B1A602 /* SearchCell.swift in Sources */,
 				9CB7802126A2B99700B1A602 /* DetailViewController.swift in Sources */,
 				9CB7800D26A2917300B1A602 /* SearchViewController.swift in Sources */,
 				9CB77FFD26A2905B00B1A602 /* CodeTestWeatherUITests.swift in Sources */,
