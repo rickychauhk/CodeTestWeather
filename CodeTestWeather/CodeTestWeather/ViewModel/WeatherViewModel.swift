@@ -25,7 +25,7 @@ class WeatherViewModel {
                 
             case .failure(let error):
 
-                print(error?.errorMessage ?? "Error fetching data")
+                debugPrint(error?.errorMessage ?? "Error fetching data")
                 
             }
         }

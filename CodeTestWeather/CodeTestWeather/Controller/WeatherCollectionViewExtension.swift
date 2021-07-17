@@ -39,6 +39,4 @@ extension DetailViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
-    
 }
