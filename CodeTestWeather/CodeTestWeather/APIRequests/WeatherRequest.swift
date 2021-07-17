@@ -17,6 +17,7 @@ struct WeatherRequest: EndPointType {
     
     init(city: String, latitude: String, longitude: String) {
         self.city = city
+        // if city is not empty, it should make the latitude and longitude empty
         self.latitude = !city.isEmpty ? "" : latitude
         self.longitude = !city.isEmpty ? "" : longitude
     }
@@ -41,7 +42,7 @@ struct WeatherRequest: EndPointType {
     
     
     var path: String {
-        return "data/2.5/weather?"
+        return Constants.basePath
     }
     
     var httpMethod: HTTPMethod {

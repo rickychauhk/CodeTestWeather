@@ -27,9 +27,9 @@ extension DetailViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
         let data = weatherViewModel.weather[indexPath.row]
         cell.cityName.text = data.name
-        cell.temperature.text = "Temperature: \(data.main?.temp.stringValue ?? "")"
+        cell.temperature.text = Constants.temperatureTitle + "\(data.main?.temp.stringValue ?? "")"
         cell.weatherDesc.text = data.weather.first?.weatherDescription
-        cell.humidity.text = "Humidity: \((data.main?.humidity) ?? 0)%"
+        cell.humidity.text = Constants.humidity + "\((data.main?.humidity) ?? 0)%"
         if let url = URL(string: data.weather.first?.iconStringURL ?? "")  {
             Nuke.loadImage(
                 with: url,

@@ -64,7 +64,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
             self.lat = String(latitude)
             
             if !Constants.isNilOrEmpty(string: self.lon) && !Constants.isNilOrEmpty(string: self.lat){
-                performSegue(withIdentifier: "detailsviewcontrollerseg", sender: self)
+                performSegue(withIdentifier: Constants.detailViewId, sender: self)
                 resetData()
             }
         }
@@ -79,7 +79,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "detailsviewcontrollerseg" {
+        if segue.identifier == Constants.detailViewId {
             let detailViewController = segue.destination as? DetailViewController
             detailViewController?.selectedCountry = selected
             detailViewController?.lat = self.lat
@@ -133,7 +133,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             selectedCountry = searchViewModel.textEncode(text: selectedCountry)
         }
         selected = selectedCountry
-        performSegue(withIdentifier: "detailsviewcontrollerseg", sender: self)
+        performSegue(withIdentifier: Constants.detailViewId, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
         self.searchBar.searchTextField.endEditing(true)
     }
@@ -158,7 +158,7 @@ extension SearchViewController: UISearchBarDelegate {
         if let city = searchBar.text {
             searchViewModel.insetCity(searchText: city, cityList: cityList)
             selected = searchViewModel.textEncode(text: city)
-            performSegue(withIdentifier: "detailsviewcontrollerseg", sender: self)
+            performSegue(withIdentifier: Constants.detailViewId, sender: self)
             resetData()
         }
     }
