@@ -51,7 +51,9 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-
+            if location.horizontalAccuracy < 0 {
+                return
+            }
             self.lon = String(location.coordinate.longitude)
             self.lat = String(location.coordinate.latitude)
             
