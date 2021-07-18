@@ -73,20 +73,19 @@ class SearchViewModel {
     func insetCity(searchText: String, cities: [String]){
 
         var isExists = false
-        var cityList = cities
-        for cityListItem in cityList {
+        var cities = cities
+        for city in cities {
             let decodedString = searchText.removingPercentEncoding!
-            if cityListItem == decodedString{
+            if city == decodedString{
                 isExists = true
                 return
             }
         }
         
-        if !isExists || cityList.count == 0 {
+        if !isExists || cities.count == 0 {
             let decodedString = searchText.removingPercentEncoding!
-            cityList.append(decodedString)
-            updateCities(cities: cityList)
+            cities.append(decodedString)
+            updateCities(cities: cities)
         }
     }
-    
 }

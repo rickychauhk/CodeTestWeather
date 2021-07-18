@@ -33,7 +33,7 @@ class WeatherViewModel {
     
     //MARK: Realm Data
     func getCachedWeatherData(){
-        if let data = RealmManager.shared.getAllOperation(ofType: Weather.self){
+        if let data = DataBaseManager.shared.getAllOperation(ofType: Weather.self){
             let weatherDataArray = Array(data) as! [Weather]
             if !weatherDataArray.isEmpty{
                 weather = weatherDataArray
@@ -43,6 +43,6 @@ class WeatherViewModel {
     }
     
     func saveWeatherObjectToReakmDb(weather: Weather){
-        RealmManager.shared.writeOperation(objectOfType: weather)
+        DataBaseManager.shared.writeOperation(objectOfType: weather)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  RealmManager.swift
+//  DataBaseManager.swift
 //  CodeTestWeather
 //
 //  Created by Ricky on 18/7/2021.
@@ -8,9 +8,9 @@
 import Foundation
 import RealmSwift
 
-class RealmManager {
+class DataBaseManager {
     
-    static let shared = RealmManager()
+    static let shared = DataBaseManager()
     
     private var realm : Realm!
     
