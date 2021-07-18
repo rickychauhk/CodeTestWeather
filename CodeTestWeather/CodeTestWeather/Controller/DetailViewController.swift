@@ -12,13 +12,13 @@ import Nuke
 class DetailViewController: UIViewController{
 
     let weatherViewModel: WeatherViewModel = WeatherViewModel()
-    var selectedCountry: String? = ""
+    var searchedCity: String? = ""
     var lat: String? = ""
     var lon: String? = ""
     @IBOutlet var collectionView: UICollectionView!
-    let searchController: DetailViewModel = DetailViewModel()
+    let detailViewModel: DetailViewModel = DetailViewModel()
     let weatherCellHeight: CGFloat = 160.0
-    @IBOutlet var searchBar: UISearchBar!
+    var forwardNavigationClosure: ((UIViewController) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,16 +28,32 @@ class DetailViewController: UIViewController{
     
     //MARK: Fetch Data
     func getDataFromAPI(){
-        
-        weatherViewModel.weather.removeAll()
-        weatherViewModel.getWeatherData(city: self.selectedCountry ?? "", lat: self.lat ?? "", lon: self.lon ?? "")
+        self.showLoader(animated: true)
+        weatherViewModel.getWeatherData(city: self.searchedCity, lat: self.lat, lon: self.lon)
     }
     
     func setupCollectionView(){
-        collectionView = searchController.setupCollectionView(collectionView: collectionView)
+        collectionView = detailViewModel.setupCollectionView(collectionView: collectionView)
+        weatherViewModel.getCachedWeatherData()
         getDataFromAPI()
-        weatherViewModel.dataLoadSuccessfully = { [weak self] in
+        
+        weatherViewModel.dataLoadIsSuccess = { [weak self] in
             self!.collectionView.reloadData()
+            hideLoader()
+        }
+        
+        weatherViewModel.dataLoadFailure = { [weak self] in
+            hideLoader()
+            let controller = UIAlertController(title: "", message: Constants.alertMessage, preferredStyle: .alert)
+            controller.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                self?.navigationController?.popViewController(animated: true)
+                self?.dismiss(animated: true, completion: nil)
+            }))
+            self!.present(controller, animated: true, completion: nil)
+        }
+        
+        func hideLoader() {
+            self.hideLoader(animated: true)
         }
     }
 }

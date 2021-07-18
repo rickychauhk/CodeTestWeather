@@ -17,5 +17,6 @@ class DetailViewModel: NSObject, UICollectionViewDelegate{
         collectionView.alwaysBounceVertical = true
         return collectionView
     }
+
 }
 

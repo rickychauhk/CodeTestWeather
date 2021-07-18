@@ -27,6 +27,9 @@
 		9CB7801F26A2B99700B1A602 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801E26A2B99700B1A602 /* DetailViewController.swift */; };
 		9CB7802026A2B99700B1A602 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801E26A2B99700B1A602 /* DetailViewController.swift */; };
 		9CB7802126A2B99700B1A602 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7801E26A2B99700B1A602 /* DetailViewController.swift */; };
+		9CCC694C26A3FA230063171E /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC694B26A3FA230063171E /* RealmManager.swift */; };
+		9CCC694D26A3FA230063171E /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC694B26A3FA230063171E /* RealmManager.swift */; };
+		9CCC694E26A3FA230063171E /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC694B26A3FA230063171E /* RealmManager.swift */; };
 		9CF0818B26A2E5C200C63948 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF0818A26A2E5C200C63948 /* Enums.swift */; };
 		9CF0818C26A2E5C200C63948 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF0818A26A2E5C200C63948 /* Enums.swift */; };
 		9CF0818D26A2E5C200C63948 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF0818A26A2E5C200C63948 /* Enums.swift */; };
@@ -105,6 +108,7 @@
 		9CB7800F26A2955400B1A602 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		9CB7801526A296C400B1A602 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9CB7801E26A2B99700B1A602 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9CCC694B26A3FA230063171E /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		9CF0818A26A2E5C200C63948 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		9CF0818E26A2E5D900C63948 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9CF0819226A2E5EB00C63948 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
@@ -242,8 +246,8 @@
 			isa = PBXGroup;
 			children = (
 				9CB7800F26A2955400B1A602 /* SearchViewModel.swift */,
-				9CF081A926A2ECDD00C63948 /* WeatherViewModel.swift */,
 				9CF081B526A3000A00C63948 /* DetailViewModel.swift */,
+				9CF081A926A2ECDD00C63948 /* WeatherViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -269,6 +273,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		9CCC694A26A3FA0B0063171E /* DataBaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				9CCC694B26A3FA230063171E /* RealmManager.swift */,
+			);
+			path = DataBaseManager;
+			sourceTree = "<group>";
+		};
 		9CF0819626A2E60E00C63948 /* APIRequests */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +294,7 @@
 		9CF081A326A2E6A800C63948 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9CCC694A26A3FA0B0063171E /* DataBaseManager */,
 				9CF081A426A2E6B500C63948 /* Weather.swift */,
 			);
 			path = Model;
@@ -532,6 +545,7 @@
 				9CB7801F26A2B99700B1A602 /* DetailViewController.swift in Sources */,
 				9CB7801626A296C400B1A602 /* Constants.swift in Sources */,
 				9CF081AA26A2ECDD00C63948 /* WeatherViewModel.swift in Sources */,
+				9CCC694C26A3FA230063171E /* RealmManager.swift in Sources */,
 				9CB7801026A2955400B1A602 /* SearchViewModel.swift in Sources */,
 				9CF081BE26A3012200C63948 /* WeatherCell.swift in Sources */,
 				9CF0818F26A2E5D900C63948 /* Extensions.swift in Sources */,
@@ -557,6 +571,7 @@
 				9CF0819926A2E61D00C63948 /* Endpoint.swift in Sources */,
 				9CF0819D26A2E63C00C63948 /* APIManager.swift in Sources */,
 				9CB7802026A2B99700B1A602 /* DetailViewController.swift in Sources */,
+				9CCC694D26A3FA230063171E /* RealmManager.swift in Sources */,
 				9CF081A626A2E6B500C63948 /* Weather.swift in Sources */,
 				9CB7800C26A2917300B1A602 /* SearchViewController.swift in Sources */,
 				9CF081A126A2E64E00C63948 /* WeatherRequest.swift in Sources */,
@@ -580,6 +595,7 @@
 				9CF0819A26A2E61D00C63948 /* Endpoint.swift in Sources */,
 				9CF0819E26A2E63C00C63948 /* APIManager.swift in Sources */,
 				9CB7802126A2B99700B1A602 /* DetailViewController.swift in Sources */,
+				9CCC694E26A3FA230063171E /* RealmManager.swift in Sources */,
 				9CF081A726A2E6B500C63948 /* Weather.swift in Sources */,
 				9CB7800D26A2917300B1A602 /* SearchViewController.swift in Sources */,
 				9CF081A226A2E64E00C63948 /* WeatherRequest.swift in Sources */,

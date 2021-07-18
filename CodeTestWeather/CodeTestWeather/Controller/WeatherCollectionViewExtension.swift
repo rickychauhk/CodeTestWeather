@@ -26,7 +26,9 @@ extension DetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
         let data = weatherViewModel.weather[indexPath.row]
-        cell.cityName.text = data.name
+        if let name = data.name {
+            cell.cityName.text = name
+        }
         cell.temperature.text = Constants.temperatureTitle + "\(data.main?.temp.stringValue ?? "")"
         cell.weatherDesc.text = data.weather.first?.weatherDescription
         cell.humidity.text = Constants.humidity + "\((data.main?.humidity) ?? 0)%"

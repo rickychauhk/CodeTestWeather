@@ -28,5 +28,7 @@ class Constants {
     static let humidity = "Humidity:"
     
     static let detailViewId = "detailsviewcontrollerseg"
+    
+    static let alertMessage = "City or Zip Code not found"
 }
 

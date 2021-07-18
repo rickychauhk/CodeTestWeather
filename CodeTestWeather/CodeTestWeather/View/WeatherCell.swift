@@ -14,9 +14,6 @@ class WeatherCell: UICollectionViewCell {
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var weatherDesc: UILabel!
     @IBOutlet weak var cityName: UILabel!
-    
-    override func awakeFromNib() {
-        
-    }
+
 }
 
