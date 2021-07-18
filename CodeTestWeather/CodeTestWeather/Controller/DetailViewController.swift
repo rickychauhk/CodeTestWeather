@@ -18,32 +18,36 @@ class DetailViewController: UIViewController{
     @IBOutlet var collectionView: UICollectionView!
     let detailViewModel: DetailViewModel = DetailViewModel()
     let weatherCellHeight: CGFloat = 160.0
-    var forwardNavigationClosure: ((UIViewController) -> Void)?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupCollectionView()
     }
+
+    func setupCollectionView(){
+        collectionView = detailViewModel.setupCollectionView(collectionView: collectionView)
+        weatherViewModel.getCachedWeatherData()
+        getDataFromAPI()
+    }
     
     //MARK: Fetch Data
     func getDataFromAPI(){
         self.showLoader(animated: true)
         weatherViewModel.getWeatherData(city: self.searchedCity, lat: self.lat, lon: self.lon)
+        getFetchedDataHandle()
     }
     
-    func setupCollectionView(){
-        collectionView = detailViewModel.setupCollectionView(collectionView: collectionView)
-        weatherViewModel.getCachedWeatherData()
-        getDataFromAPI()
-        
+    
+    func getFetchedDataHandle(){
         weatherViewModel.dataLoadIsSuccess = { [weak self] in
             self!.collectionView.reloadData()
-            hideLoader()
+            self!.hideLoader()
         }
         
         weatherViewModel.dataLoadFailure = { [weak self] in
-            hideLoader()
+            self!.hideLoader()
             let controller = UIAlertController(title: "", message: Constants.alertMessage, preferredStyle: .alert)
             controller.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                 self?.navigationController?.popViewController(animated: true)
@@ -51,9 +55,9 @@ class DetailViewController: UIViewController{
             }))
             self!.present(controller, animated: true, completion: nil)
         }
-        
-        func hideLoader() {
-            self.hideLoader(animated: true)
-        }
+    }
+    
+    func hideLoader() {
+        self.hideLoader(animated: true)
     }
 }

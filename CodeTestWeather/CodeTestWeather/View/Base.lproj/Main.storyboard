@@ -18,10 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" id="KBF-EE-7ZH">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="KBF-EE-7ZH">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="w2B-Mf-DFC"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits" textContentType="address-level1+2"/>
                                 <connections>
                                     <outlet property="delegate" destination="x8J-ov-BzI" id="nV2-RP-Lzv"/>
                                 </connections>
@@ -65,9 +67,12 @@
                         <viewLayoutGuide key="safeArea" id="0zg-Vh-dTk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="KBF-EE-7ZH" firstAttribute="leading" secondItem="RT7-hw-4SR" secondAttribute="leading" id="49H-9u-TEL"/>
                             <constraint firstItem="RT7-hw-4SR" firstAttribute="top" secondItem="KBF-EE-7ZH" secondAttribute="bottom" symbolic="YES" id="4sJ-R2-jvx"/>
+                            <constraint firstItem="KBF-EE-7ZH" firstAttribute="trailing" secondItem="RT7-hw-4SR" secondAttribute="trailing" id="PhF-qz-q5z"/>
                             <constraint firstItem="RT7-hw-4SR" firstAttribute="leading" secondItem="0zg-Vh-dTk" secondAttribute="leading" id="coD-oO-h7B"/>
                             <constraint firstItem="RT7-hw-4SR" firstAttribute="trailing" secondItem="0zg-Vh-dTk" secondAttribute="trailing" id="eFy-XU-tEY"/>
+                            <constraint firstItem="KBF-EE-7ZH" firstAttribute="top" secondItem="0zg-Vh-dTk" secondAttribute="top" id="m5t-eh-i0H"/>
                             <constraint firstAttribute="bottom" secondItem="RT7-hw-4SR" secondAttribute="bottom" id="ona-f0-Bll"/>
                         </constraints>
                     </view>

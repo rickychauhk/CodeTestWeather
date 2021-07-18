@@ -15,14 +15,12 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var gpsBarBtn: UIBarButtonItem!
     
     let searchViewModel: SearchViewModel = SearchViewModel()
-    let weatherViewModel: WeatherViewModel = WeatherViewModel()
     var cities = [String]()
     var searchedCities = [String]()
     var searching = false
     var selected: String = ""
     
     var locationManger: CLLocationManager!
-    var currentlocation: CLLocation?
     var lat: String = ""
     var lon: String = ""
     
@@ -53,12 +51,11 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-            self.currentlocation = location
 
-            self.lon = String(self.currentlocation!.coordinate.longitude)
-            self.lat = String(self.currentlocation!.coordinate.latitude)
+            self.lon = String(location.coordinate.longitude)
+            self.lat = String(location.coordinate.latitude)
             
-            if !Constants.isNilOrEmpty(string: self.lon) && !Constants.isNilOrEmpty(string: self.lat){
+            if !self.lon.isEmpty && !self.lat.isEmpty {
                 performSegue(withIdentifier: Constants.detailViewId, sender: self)
                 resetData()
             }

@@ -30,7 +30,7 @@ extension DetailViewController: UICollectionViewDataSource {
             cell.cityName.text = name
         }
         cell.temperature.text = Constants.temperatureTitle + "\(data.main?.temp.stringValue ?? "")"
-        cell.weatherDesc.text = data.weather.first?.weatherDescription
+        cell.weatherDesc.text = data.weather.first?.weatherDescription ?? ""
         cell.humidity.text = Constants.humidity + "\((data.main?.humidity) ?? 0)%"
         if let url = URL(string: data.weather.first?.iconStringURL ?? "")  {
             Nuke.loadImage(
@@ -38,7 +38,6 @@ extension DetailViewController: UICollectionViewDataSource {
                 into: cell.weatherImage
             )
         }
-        
         return cell
     }
 }
