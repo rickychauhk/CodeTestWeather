@@ -52,7 +52,7 @@ class Main: Object, Codable {
     @objc dynamic var humidity: Int = 0
 
     enum CodingKeys: String, CodingKey {
-        case temp
+        case temp = "temp"
         case feelsLike = "feels_like"
         case tempMin = "temp_min"
         case tempMax = "temp_max"

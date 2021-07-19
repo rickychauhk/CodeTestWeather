@@ -22,19 +22,17 @@ struct ResponseError {
 }
 class APIManager {
     
-    // MARK: - Vars & Lets
     private static var sharedApiManager: APIManager = {
         let apiManager = APIManager()
         
         return apiManager
     }()
     
-    // MARK: - Accessors
     class func shared() -> APIManager {
         return sharedApiManager
     }
     
-    //MARK: - Gateway
+
     func request<T>(type: EndPointType, handler: @escaping ResultHandler<T>) where T: Codable {
         
         Alamofire.request(type.url, method: type.httpMethod , parameters: type.params, encoding: type.encoding, headers: type.headers).validate().responseJSON { [weak self] (response) in

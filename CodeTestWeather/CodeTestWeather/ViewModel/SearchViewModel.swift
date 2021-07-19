@@ -13,40 +13,33 @@ class SearchViewModel {
     
     func setupTableView(tableView: UITableView) -> UITableView {
         
-        tableView.separatorStyle = .none
-        tableView.tintColor = .white
-        tableView.backgroundColor = .white
-        
         return tableView
     }
     
     func setupSearchbar(searchBar: UISearchBar) -> UISearchBar {
         
-        searchBar.barTintColor = .systemGray2
-        searchBar.tintColor = .white
-    
         searchBar.showsCancelButton = true
         return searchBar
     }
     
-    func setupNumberOfRowsInSection(searching:Bool, section:Int, cityList:[String], searchedCity:[String]) -> Int{
+    func setupNumberOfRowsInSection(searching:Bool, section:Int, cities:[String], searchedCity:[String]) -> Int{
         var dataCount = 0
         if searching {
             dataCount = searchedCity.count
         } else {
-            dataCount = cityList.count
+            dataCount = cities.count
         }
         
         return dataCount
     }
     
-    func setupCellForRowAt(searching: Bool, tableView: UITableView, indexPath: IndexPath, cityList:[String], searchedCity:[String]) -> UITableViewCell{
+    func setupCellForRowAt(searching: Bool, tableView: UITableView, indexPath: IndexPath, cities:[String], searchedCity:[String]) -> UITableViewCell{
         let cell = UITableViewCell()
       
         if searching {
             cell.textLabel?.text = searchedCity[indexPath.row]
         } else {
-            cell.textLabel?.text = cityList[indexPath.row]
+            cell.textLabel?.text = cities[indexPath.row]
         }
         
         return cell
@@ -62,14 +55,14 @@ class SearchViewModel {
         tableView.beginUpdates()
         tableView.deleteRows(at: [indexPath], with: .middle)
         tableView.endUpdates()
-        updateCityList(cityList: cities)
+        updateCities(cities: cities)
         return tableView
     }
     
-    func updateCityList(cityList: [String]){
+    func updateCities(cities: [String]){
         
         let userDefaults = UserDefaults.standard
-        userDefaults.set(cityList, forKey: Constants.storeKey)
+        userDefaults.set(cities, forKey: Constants.storeKey)
     }
     
     func textEncode(text: String) -> String{
@@ -77,23 +70,22 @@ class SearchViewModel {
         return searchText!
     }
     
-    func insetCity(searchText: String, cityList: [String]){
+    func insetCity(searchText: String, cities: [String]){
 
         var isExists = false
-        var cityList = cityList
-        for cityListItem in cityList {
+        var cities = cities
+        for city in cities {
             let decodedString = searchText.removingPercentEncoding!
-            if cityListItem == decodedString{
+            if city == decodedString{
                 isExists = true
                 return
             }
         }
         
-        if !isExists || cityList.count == 0 {
+        if !isExists || cities.count == 0 {
             let decodedString = searchText.removingPercentEncoding!
-            cityList.append(decodedString)
-            updateCityList(cityList: cityList)
+            cities.append(decodedString)
+            updateCities(cities: cities)
         }
     }
-    
 }
