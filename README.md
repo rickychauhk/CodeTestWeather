@@ -1,6 +1,5 @@
 # CodeTestWeather
-Written in Swift using MVVM architecture 
-Fetch weather data from OpenWeather
+Written in Swift using MVVM architecture and fetch weather data from OpenWeather
 
 api.openweathermap.org/data/2.5/weather?q={city name},{state code}&appid=95d190a434083879a6398aafd54d9e73
 
