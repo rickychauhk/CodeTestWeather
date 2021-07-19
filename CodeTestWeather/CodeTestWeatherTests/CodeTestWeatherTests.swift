@@ -10,9 +10,10 @@ import XCTest
 
 class CodeTestWeatherTests: XCTestCase {
     var viewModel: Weather!
+    var weather: [Weather] = []
     
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+       
     }
     
     override func tearDown() {
@@ -22,10 +23,10 @@ class CodeTestWeatherTests: XCTestCase {
     
     func testJSONDecoding() {
         
-        // Convert restaurant.json to Data
+        // Convert weather.json to Data
         
         let testBundle = Bundle(for: type(of: self))
-        let path = testBundle.path(forResource: "restaurants", ofType: "json")
+        let path = testBundle.path(forResource: "weather", ofType: "json")
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: path!), options: .alwaysMapped) else {
             fatalError("Data is nil")
         }
@@ -37,7 +38,7 @@ class CodeTestWeatherTests: XCTestCase {
     
     func testResourceDetailViewModel() {
         let testBundle = Bundle(for: type(of: self))
-        let path = testBundle.path(forResource: "restaurants", ofType: "json")
+        let path = testBundle.path(forResource: "weather", ofType: "json")
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: path!), options: .alwaysMapped) else {
             fatalError("Data is nil")
         }
@@ -45,8 +46,15 @@ class CodeTestWeatherTests: XCTestCase {
         let resource = try! JSONDecoder().decode(Weather.self, from: data)
 
         viewModel = Weather(value: resource)
-        
+     
+        self.weather.append(resource)
+     
         XCTAssertEqual(viewModel.name, "HongKong")
+        XCTAssertEqual(viewModel.weather[0].weatherDescription, "few clouds")
+        XCTAssertEqual(viewModel.main?.temp.stringValue , "308.17")
+        XCTAssertEqual(viewModel.main?.humidity, 5)
+        XCTAssertEqual(viewModel.weather[0].iconStringURL, "https://openweathermap.org/img/wn/02d@2x.png")
+        
     }
     
     override func setUpWithError() throws {
