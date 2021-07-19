@@ -6,9 +6,9 @@ https://api.openweathermap.org/data/2.5/weather?q={city name},{state code}&appid
 # Usage
 To run the project, clone the repo, and run pod install from the project directory first
 
-Alamofire
-RealmSwift
-Nuke
+Alamofire,
+RealmSwift,
+Nuke,
 MBProgressHUD
 
 
